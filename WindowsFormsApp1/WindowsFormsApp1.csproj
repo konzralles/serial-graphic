@@ -35,6 +35,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -46,6 +47,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ChartTypeEnum.cs" />
     <Compile Include="SerialReadAndWrite.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -80,6 +82,12 @@
     </Compile>
     <EmbeddedResource Include="SerialReadAndWrite1.resx">
       <DependentUpon>SerialReadAndWrite1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SerialReadAndWrite1.tr.resx">
+      <DependentUpon>SerialReadAndWrite1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SerialReadAndWrite2.resx">
+      <DependentUpon>SerialReadAndWrite2.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

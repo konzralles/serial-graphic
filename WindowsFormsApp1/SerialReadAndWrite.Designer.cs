@@ -106,10 +106,10 @@
             this.btn_reflesh.UseVisualStyleBackColor = true;
             this.btn_reflesh.Click += new System.EventHandler(this.btn_reflesh_Click);
             // 
-            // Baglanti
+            // SerialReadAndWrite
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(215, 96);
             this.Controls.Add(this.btn_reflesh);
             this.Controls.Add(this.btn_connect);
@@ -117,7 +117,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.cB_baundRate);
             this.Controls.Add(this.cB_serialPort);
-            this.Name = "Baglanti";
+            this.Name = "SerialReadAndWrite";
             this.Text = "Seri Port Bağlantı";
             this.Load += new System.EventHandler(this.Baglanti_Load);
             this.ResumeLayout(false);

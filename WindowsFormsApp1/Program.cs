@@ -16,7 +16,8 @@ namespace WindowsFormsApp1
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new SerialReadAndWrite1(9600,"COM3"));
+            Application.Run(new SerialReadAndWrite());
+            //Application.Run(new SerialReadAndWrite1(9600,"COM3"));
         }
     }
 }

@@ -22,14 +22,114 @@ namespace WindowsFormsApp1
             lbl_com.Text = PortName;
             lbl_baundrate.Text = "BaundRate " + Baundrate.ToString();
         }
-
-        private void SerialReadAndWrite_Load(object sender, EventArgs e)
+        
+        private ChartTypeEnum Chart_Cb_to_enum (int index)
         {
-            
+            switch (index)
+            {
+                case 0:
+                    return ChartTypeEnum.NOT_SELECTED;
+
+                case 1:
+                    return ChartTypeEnum.LINE;
+
+                case 2:
+                    return ChartTypeEnum.COLUMN;
+
+                case 3:
+                    return ChartTypeEnum.NONE;
+
+                default:
+                    return ChartTypeEnum.NOT_SELECTED;
+            }
+
+        }
+
+        private bool ControlUINullName()
+        {
+            int dataCount = Convert.ToInt32(cB_dataCount.Items[cB_dataCount.SelectedIndex]);
+            if (tB_firstDataName.Text == "") return false;
+            if (dataCount >= 2) if (tB_secondDataName.Text == "") return false;
+            if (dataCount >= 3) if (tB_thirdDataName.Text == "") return false; 
+            if (dataCount >= 4) if (tB_fourthDataName.Text == "") return false; 
+            if (dataCount >= 5) if (tB_fifthDataName.Text == "") return false; 
+            if (dataCount >= 6) if (tB_sixthDataName.Text == "") return false; 
+            if (dataCount >= 7) if (tB_seventhDataName.Text == "") return false; 
+            if (dataCount >= 8) if (tB_eighthDataName.Text == "") return false; 
+            if (dataCount >= 9) if (tB_ninthDataName.Text == "") return false; 
+            if (dataCount >= 10) if (tB_tenthDataName.Text == "") return false;
+            return true;
+
         }
 
         private void btn_connect_Click(object sender, EventArgs e)
         {
+            if (ControlUINullName()==false)
+            {
+                MessageBox.Show("Lütfen kullanacağınız tüm verilere isim veriniz!");
+                return;
+            }
+
+            ChartTypeEnum[] chart1TypeEnum = new ChartTypeEnum[10];
+            ChartTypeEnum[] chart2TypeEnum = new ChartTypeEnum[10];
+            string[] chartName = new string[10];
+            Color[] dataColor = new Color[10];
+            string splitString = cB_splitChar.Text;
+            int dataCount = Convert.ToInt32(cB_dataCount.Items[cB_dataCount.SelectedIndex]);
+
+            chart1TypeEnum[0] = Chart_Cb_to_enum(cB_firstG1.SelectedIndex);
+            chart1TypeEnum[1] = Chart_Cb_to_enum(cB_secondG1.SelectedIndex);
+            chart1TypeEnum[2] = Chart_Cb_to_enum(cB_thirdG1.SelectedIndex);
+            chart1TypeEnum[3] = Chart_Cb_to_enum(cB_fourthG1.SelectedIndex);
+            chart1TypeEnum[4] = Chart_Cb_to_enum(cB_fifthG1.SelectedIndex);
+            chart1TypeEnum[5] = Chart_Cb_to_enum(cB_sixthG1.SelectedIndex);
+            chart1TypeEnum[6] = Chart_Cb_to_enum(cB_seventhG1.SelectedIndex);
+            chart1TypeEnum[7] = Chart_Cb_to_enum(cB_eighthG1.SelectedIndex);
+            chart1TypeEnum[8] = Chart_Cb_to_enum(cB_ninthG1.SelectedIndex);
+            chart1TypeEnum[9] = Chart_Cb_to_enum(cB_tenthG1.SelectedIndex);
+
+            chart2TypeEnum[0] = Chart_Cb_to_enum(cB_firstG2.SelectedIndex);
+            chart2TypeEnum[1] = Chart_Cb_to_enum(cB_secondG2.SelectedIndex);
+            chart2TypeEnum[2] = Chart_Cb_to_enum(cB_thirdG2.SelectedIndex);
+            chart2TypeEnum[3] = Chart_Cb_to_enum(cB_fourthG2.SelectedIndex);
+            chart2TypeEnum[4] = Chart_Cb_to_enum(cB_fifthG2.SelectedIndex);
+            chart2TypeEnum[5] = Chart_Cb_to_enum(cB_sixthG2.SelectedIndex);
+            chart2TypeEnum[6] = Chart_Cb_to_enum(cB_seventhG2.SelectedIndex);
+            chart2TypeEnum[7] = Chart_Cb_to_enum(cB_eighthG2.SelectedIndex);
+            chart2TypeEnum[8] = Chart_Cb_to_enum(cB_ninthG2.SelectedIndex);
+            chart2TypeEnum[9] = Chart_Cb_to_enum(cB_tenthG2.SelectedIndex);
+
+            chartName[0] = tB_firstDataName.Text;
+            chartName[1] = tB_secondDataName.Text;
+            chartName[2] = tB_thirdDataName.Text;
+            chartName[3] = tB_fourthDataName.Text;
+            chartName[4] = tB_fifthDataName.Text;
+            chartName[5] = tB_sixthDataName.Text;
+            chartName[6] = tB_seventhDataName.Text;
+            chartName[7] = tB_eighthDataName.Text;
+            chartName[8] = tB_ninthDataName.Text;
+            chartName[9] = tB_tenthDataName.Text;
+
+            dataColor[0] = btn_clr1.BackColor;
+            dataColor[1] = btn_clr2.BackColor;
+            dataColor[2] = btn_clr3.BackColor;
+            dataColor[3] = btn_clr4.BackColor;
+            dataColor[4] = btn_clr5.BackColor;
+            dataColor[5] = btn_clr6.BackColor;
+            dataColor[6] = btn_clr7.BackColor;
+            dataColor[7] = btn_clr8.BackColor;
+            dataColor[8] = btn_clr9.BackColor;
+            dataColor[9] = btn_clr10.BackColor;
+
+            SerialReadAndWrite2 Chart1 = new SerialReadAndWrite2(PortName, Baundrate, splitString, chartName, chart1TypeEnum, dataColor, "Chart1");
+            Chart1.Show();
+
+            if(checkbox_chart2.Checked)
+            {
+                SerialReadAndWrite2 Chart2 = new SerialReadAndWrite2(PortName, Baundrate, splitString, chartName, chart2TypeEnum, dataColor, "Chart2");
+                Chart2.Show();
+            }
+
 
         }
 
@@ -59,6 +159,17 @@ namespace WindowsFormsApp1
                     lbl8.Hide();
                     lbl9.Hide();
                     lbl10.Hide();
+
+                    btn_clr1.Show();
+                    btn_clr2.Hide();
+                    btn_clr3.Hide();
+                    btn_clr4.Hide();
+                    btn_clr5.Hide();
+                    btn_clr6.Hide();
+                    btn_clr7.Hide();
+                    btn_clr8.Hide();
+                    btn_clr9.Hide();
+                    btn_clr10.Hide();
 
                     tB_firstDataName.Show();
                     tB_secondDataName.Hide();
@@ -129,6 +240,17 @@ namespace WindowsFormsApp1
                     lbl9.Hide();
                     lbl10.Hide();
 
+                    btn_clr1.Show();
+                    btn_clr2.Show();
+                    btn_clr3.Hide();
+                    btn_clr4.Hide();
+                    btn_clr5.Hide();
+                    btn_clr6.Hide();
+                    btn_clr7.Hide();
+                    btn_clr8.Hide();
+                    btn_clr9.Hide();
+                    btn_clr10.Hide();
+
                     tB_firstDataName.Show();
                     tB_secondDataName.Show();
                     tB_thirdDataName.Hide();
@@ -194,6 +316,17 @@ namespace WindowsFormsApp1
                     lbl8.Hide();
                     lbl9.Hide();
                     lbl10.Hide();
+
+                    btn_clr1.Show();
+                    btn_clr2.Show();
+                    btn_clr3.Show();
+                    btn_clr4.Hide();
+                    btn_clr5.Hide();
+                    btn_clr6.Hide();
+                    btn_clr7.Hide();
+                    btn_clr8.Hide();
+                    btn_clr9.Hide();
+                    btn_clr10.Hide();
 
                     tB_firstDataName.Show();
                     tB_secondDataName.Show();
@@ -261,6 +394,17 @@ namespace WindowsFormsApp1
                     lbl9.Hide();
                     lbl10.Hide();
 
+                    btn_clr1.Show();
+                    btn_clr2.Show();
+                    btn_clr3.Show();
+                    btn_clr4.Show();
+                    btn_clr5.Hide();
+                    btn_clr6.Hide();
+                    btn_clr7.Hide();
+                    btn_clr8.Hide();
+                    btn_clr9.Hide();
+                    btn_clr10.Hide();
+
                     tB_firstDataName.Show();
                     tB_secondDataName.Show();
                     tB_thirdDataName.Show();
@@ -326,6 +470,17 @@ namespace WindowsFormsApp1
                     lbl8.Hide();
                     lbl9.Hide();
                     lbl10.Hide();
+
+                    btn_clr1.Show();
+                    btn_clr2.Show();
+                    btn_clr3.Show();
+                    btn_clr4.Show();
+                    btn_clr5.Show();
+                    btn_clr6.Hide();
+                    btn_clr7.Hide();
+                    btn_clr8.Hide();
+                    btn_clr9.Hide();
+                    btn_clr10.Hide();
 
                     tB_firstDataName.Show();
                     tB_secondDataName.Show();
@@ -393,6 +548,17 @@ namespace WindowsFormsApp1
                     lbl9.Hide();
                     lbl10.Hide();
 
+                    btn_clr1.Show();
+                    btn_clr2.Show();
+                    btn_clr3.Show();
+                    btn_clr4.Show();
+                    btn_clr5.Show();
+                    btn_clr6.Show();
+                    btn_clr7.Hide();
+                    btn_clr8.Hide();
+                    btn_clr9.Hide();
+                    btn_clr10.Hide();
+
                     tB_firstDataName.Show();
                     tB_secondDataName.Show();
                     tB_thirdDataName.Show();
@@ -458,6 +624,17 @@ namespace WindowsFormsApp1
                     lbl8.Hide();
                     lbl9.Hide();
                     lbl10.Hide();
+
+                    btn_clr1.Show();
+                    btn_clr2.Show();
+                    btn_clr3.Show();
+                    btn_clr4.Show();
+                    btn_clr5.Show();
+                    btn_clr6.Show();
+                    btn_clr7.Show();
+                    btn_clr8.Hide();
+                    btn_clr9.Hide();
+                    btn_clr10.Hide();
 
                     tB_firstDataName.Show();
                     tB_secondDataName.Show();
@@ -525,6 +702,17 @@ namespace WindowsFormsApp1
                     lbl9.Hide();
                     lbl10.Hide();
 
+                    btn_clr1.Show();
+                    btn_clr2.Show();
+                    btn_clr3.Show();
+                    btn_clr4.Show();
+                    btn_clr5.Show();
+                    btn_clr6.Show();
+                    btn_clr7.Show();
+                    btn_clr8.Show();
+                    btn_clr9.Hide();
+                    btn_clr10.Hide();
+
                     tB_firstDataName.Show();
                     tB_secondDataName.Show();
                     tB_thirdDataName.Show();
@@ -591,6 +779,17 @@ namespace WindowsFormsApp1
                     lbl9.Show();
                     lbl10.Hide();
 
+                    btn_clr1.Show();
+                    btn_clr2.Show();
+                    btn_clr3.Show();
+                    btn_clr4.Show();
+                    btn_clr5.Show();
+                    btn_clr6.Show();
+                    btn_clr7.Show();
+                    btn_clr8.Show();
+                    btn_clr9.Show();
+                    btn_clr10.Hide();
+
                     tB_firstDataName.Show();
                     tB_secondDataName.Show();
                     tB_thirdDataName.Show();
@@ -656,6 +855,17 @@ namespace WindowsFormsApp1
                     lbl8.Show();
                     lbl9.Show();
                     lbl10.Show();
+
+                    btn_clr1.Show();
+                    btn_clr2.Show();
+                    btn_clr3.Show();
+                    btn_clr4.Show();
+                    btn_clr5.Show();
+                    btn_clr6.Show();
+                    btn_clr7.Show();
+                    btn_clr8.Show();
+                    btn_clr9.Show();
+                    btn_clr10.Show();
 
                     tB_firstDataName.Show();
                     tB_secondDataName.Show();
@@ -738,6 +948,17 @@ namespace WindowsFormsApp1
             lbl9.Hide();
             lbl10.Hide();
 
+            btn_clr1.Show();
+            btn_clr2.Hide();
+            btn_clr3.Hide();
+            btn_clr4.Hide();
+            btn_clr5.Hide();
+            btn_clr6.Hide();
+            btn_clr7.Hide();
+            btn_clr8.Hide();
+            btn_clr9.Hide();
+            btn_clr10.Hide();
+
             tB_firstDataName.Show();
             tB_secondDataName.Hide();
             tB_thirdDataName.Hide();
@@ -798,6 +1019,9 @@ namespace WindowsFormsApp1
             cB_ninthG2.Items.AddRange(chartTypes); 
             cB_tenthG2.Items.AddRange(chartTypes);
 
+            cB_dataCount.SelectedIndex = 0;
+            cB_splitChar.SelectedIndex = 0;
+
             cB_firstG1.SelectedIndex = 0;
             cB_secondG1.SelectedIndex = 0;
             cB_thirdG1.SelectedIndex = 0;
@@ -831,6 +1055,60 @@ namespace WindowsFormsApp1
         {
             colorDialog1.ShowDialog();
             btn_clr1.BackColor = colorDialog1.Color;
+        }
+
+        private void btn_clr2_Click(object sender, EventArgs e)
+        {
+            colorDialog1.ShowDialog();
+            btn_clr2.BackColor = colorDialog1.Color;
+        }
+
+        private void btn_clr3_Click(object sender, EventArgs e)
+        {
+            colorDialog1.ShowDialog();
+            btn_clr3.BackColor = colorDialog1.Color;
+        }
+
+        private void btn_clr4_Click(object sender, EventArgs e)
+        {
+            colorDialog1.ShowDialog();
+            btn_clr4.BackColor = colorDialog1.Color;
+        }
+
+        private void btn_clr5_Click(object sender, EventArgs e)
+        {
+            colorDialog1.ShowDialog();
+            btn_clr5.BackColor = colorDialog1.Color;
+        }
+
+        private void btn_clr6_Click(object sender, EventArgs e)
+        {
+            colorDialog1.ShowDialog();
+            btn_clr6.BackColor = colorDialog1.Color;
+        }
+
+        private void btn_clr7_Click(object sender, EventArgs e)
+        {
+            colorDialog1.ShowDialog();
+            btn_clr7.BackColor = colorDialog1.Color;
+        }
+
+        private void btn_clr8_Click(object sender, EventArgs e)
+        {
+            colorDialog1.ShowDialog();
+            btn_clr8.BackColor = colorDialog1.Color;
+        }
+
+        private void btn_clr9_Click(object sender, EventArgs e)
+        {
+            colorDialog1.ShowDialog();
+            btn_clr9.BackColor = colorDialog1.Color;
+        }
+
+        private void btn_clr10_Click(object sender, EventArgs e)
+        {
+            colorDialog1.ShowDialog();
+            btn_clr10.BackColor = colorDialog1.Color;
         }
     }
 }

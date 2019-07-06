@@ -7,14 +7,49 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO.Ports;
 
 namespace WindowsFormsApp1
 {
     public partial class SerialReadAndWrite2 : Form
     {
-        public SerialReadAndWrite2()
+        private readonly string portName;
+        private readonly int baundRate;
+        private readonly string splitString;
+        private readonly string[] chartName;
+        private readonly ChartTypeEnum[] chartTypeEnums = new ChartTypeEnum[10];
+        private readonly Color[] dataColor;
+        private readonly string ChartText;
+        SerialPort sp;
+        List<string> serial_list;
+
+        public SerialReadAndWrite2(string portName, int baundRate, string splitString, string[] chartName, ChartTypeEnum[] chartTypeEnums, Color[] dataColor, string ChartText)
         {
             InitializeComponent();
+            this.portName = portName;
+            this.baundRate = baundRate;
+            this.splitString = splitString;
+            this.chartName = chartName;
+            this.chartTypeEnums = chartTypeEnums;
+            this.dataColor = dataColor;
+            this.ChartText = ChartText;
+            sp = new SerialPort(portName, baundRate, Parity.None, 8, StopBits.One);
+        }
+
+        private void SerialReadAndWrite2_Load(object sender, EventArgs e)
+        {
+            this.Text = ChartText;
+            lbl_baundrate.Text = "Baundrate" + baundRate + "";
+            lbl_portname.Text = portName;
+            sp.Open();
+            sp.DataReceived += new SerialDataReceivedEventHandler(sp_DataReceived);
+        }
+
+        private void sp_DataReceived(object sender, SerialDataReceivedEventArgs e)
+        {
+            string veri = sp.ReadExisting();
+            Console.WriteLine(sp.ReadExisting());
+            serial_list.Add(veri);
         }
     }
 }
