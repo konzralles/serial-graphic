@@ -21,7 +21,8 @@ namespace WindowsFormsApp1
         private readonly Color[] dataColor;
         private readonly string ChartText;
         SerialPort sp;
-        List<string> serial_list;
+        List<string> serial_list = new List<string>();
+        private int maxDataCount = 360000;
 
         public SerialReadAndWrite2(string portName, int baundRate, string splitString, string[] chartName, ChartTypeEnum[] chartTypeEnums, Color[] dataColor, string ChartText)
         {
@@ -48,8 +49,26 @@ namespace WindowsFormsApp1
         private void sp_DataReceived(object sender, SerialDataReceivedEventArgs e)
         {
             string veri = sp.ReadExisting();
-            Console.WriteLine(sp.ReadExisting());
+            Console.WriteLine(veri);
             serial_list.Add(veri);
+
+            //Listeyi belirli bir max değer altında tutmak.
+            while (serial_list.Count > maxDataCount) serial_list.RemoveAt(0);
+        }
+
+        private void btn_applyMaxDataCount_Click(object sender, EventArgs e)
+        {
+            string maxDataCountString = tb_maxDataCount.Text;
+            foreach(char maxDataCountChars in maxDataCountString)
+            {
+                if (maxDataCountChars > 57 || maxDataCountChars < 48)
+                {
+                    tb_maxDataCount.Text = Convert.ToString(maxDataCount);
+                    MessageBox.Show("Lütfen sadece sayı giriniz.");
+                    return;
+                }
+            }
+            maxDataCount = Convert.ToInt32(maxDataCountString);
         }
     }
 }
