@@ -70,9 +70,18 @@ namespace WindowsFormsApp1
 
         private void sp_DataReceived(object sender, SerialDataReceivedEventArgs e)
         {
+            if (sp.IsOpen == false) return;
             string data = sp.ReadExisting();
+
+            sp.DiscardInBuffer();
+            sp.DiscardOutBuffer();
+
             string[] fragmentedData;
-            string time = "H:" + hour + "  M:" + minute + " S:" + second + ":" + splitSecond + "";
+            string time;
+
+            if (hour == 0) time = "  M:" + minute + " S:" + second + "";
+            else time = "H:" + hour + "  M:" + minute + " S:" + second + "";
+
             Console.WriteLine(data);
             serial_list.Add(data);
 
@@ -115,9 +124,7 @@ namespace WindowsFormsApp1
 
         private void SerialReadAndWrite2_FormClosing(object sender, FormClosingEventArgs e)
         {
-            sp.Close();
-            SerialReadAndWrite serialReadAndWrite = new SerialReadAndWrite();
-            serialReadAndWrite.Show();
+
         }
 
         private void timer1_Tick(object sender, EventArgs e)
@@ -139,6 +146,13 @@ namespace WindowsFormsApp1
                 minute = 0;
                 hour += 1;
             }
+        }
+
+        private void SerialReadAndWrite2_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            sp.Close();
+            Application.Exit();
+            //Environment.Exit(0);
         }
     }
 }
