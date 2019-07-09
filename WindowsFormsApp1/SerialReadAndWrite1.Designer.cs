@@ -66,19 +66,7 @@
             this.cB_eighthG1 = new System.Windows.Forms.ComboBox();
             this.cB_ninthG1 = new System.Windows.Forms.ComboBox();
             this.cB_tenthG1 = new System.Windows.Forms.ComboBox();
-            this.cB_firstG2 = new System.Windows.Forms.ComboBox();
-            this.cB_secondG2 = new System.Windows.Forms.ComboBox();
-            this.cB_thirdG2 = new System.Windows.Forms.ComboBox();
-            this.cB_fourthG2 = new System.Windows.Forms.ComboBox();
-            this.cB_fifthG2 = new System.Windows.Forms.ComboBox();
-            this.cB_sixthG2 = new System.Windows.Forms.ComboBox();
-            this.cB_seventhG2 = new System.Windows.Forms.ComboBox();
-            this.cB_eighthG2 = new System.Windows.Forms.ComboBox();
-            this.cB_ninthG2 = new System.Windows.Forms.ComboBox();
-            this.cB_tenthG2 = new System.Windows.Forms.ComboBox();
-            this.lbl_chart2 = new System.Windows.Forms.Label();
             this.lbl_chart1 = new System.Windows.Forms.Label();
-            this.checkbox_chart2 = new System.Windows.Forms.CheckBox();
             this.colorDialog1 = new System.Windows.Forms.ColorDialog();
             this.btn_clr1 = new System.Windows.Forms.Button();
             this.btn_clr2 = new System.Windows.Forms.Button();
@@ -130,16 +118,7 @@
             resources.GetString("cB_splitChar.Items5"),
             resources.GetString("cB_splitChar.Items6"),
             resources.GetString("cB_splitChar.Items7"),
-            resources.GetString("cB_splitChar.Items8"),
-            resources.GetString("cB_splitChar.Items9"),
-            resources.GetString("cB_splitChar.Items10"),
-            resources.GetString("cB_splitChar.Items11"),
-            resources.GetString("cB_splitChar.Items12"),
-            resources.GetString("cB_splitChar.Items13"),
-            resources.GetString("cB_splitChar.Items14"),
-            resources.GetString("cB_splitChar.Items15"),
-            resources.GetString("cB_splitChar.Items16"),
-            resources.GetString("cB_splitChar.Items17")});
+            resources.GetString("cB_splitChar.Items8")});
             this.cB_splitChar.Name = "cB_splitChar";
             // 
             // label2
@@ -324,82 +303,10 @@
             this.cB_tenthG1.FormattingEnabled = true;
             this.cB_tenthG1.Name = "cB_tenthG1";
             // 
-            // cB_firstG2
-            // 
-            resources.ApplyResources(this.cB_firstG2, "cB_firstG2");
-            this.cB_firstG2.FormattingEnabled = true;
-            this.cB_firstG2.Name = "cB_firstG2";
-            // 
-            // cB_secondG2
-            // 
-            resources.ApplyResources(this.cB_secondG2, "cB_secondG2");
-            this.cB_secondG2.FormattingEnabled = true;
-            this.cB_secondG2.Name = "cB_secondG2";
-            // 
-            // cB_thirdG2
-            // 
-            resources.ApplyResources(this.cB_thirdG2, "cB_thirdG2");
-            this.cB_thirdG2.FormattingEnabled = true;
-            this.cB_thirdG2.Name = "cB_thirdG2";
-            // 
-            // cB_fourthG2
-            // 
-            resources.ApplyResources(this.cB_fourthG2, "cB_fourthG2");
-            this.cB_fourthG2.FormattingEnabled = true;
-            this.cB_fourthG2.Name = "cB_fourthG2";
-            // 
-            // cB_fifthG2
-            // 
-            resources.ApplyResources(this.cB_fifthG2, "cB_fifthG2");
-            this.cB_fifthG2.FormattingEnabled = true;
-            this.cB_fifthG2.Name = "cB_fifthG2";
-            // 
-            // cB_sixthG2
-            // 
-            resources.ApplyResources(this.cB_sixthG2, "cB_sixthG2");
-            this.cB_sixthG2.FormattingEnabled = true;
-            this.cB_sixthG2.Name = "cB_sixthG2";
-            // 
-            // cB_seventhG2
-            // 
-            resources.ApplyResources(this.cB_seventhG2, "cB_seventhG2");
-            this.cB_seventhG2.FormattingEnabled = true;
-            this.cB_seventhG2.Name = "cB_seventhG2";
-            // 
-            // cB_eighthG2
-            // 
-            resources.ApplyResources(this.cB_eighthG2, "cB_eighthG2");
-            this.cB_eighthG2.FormattingEnabled = true;
-            this.cB_eighthG2.Name = "cB_eighthG2";
-            // 
-            // cB_ninthG2
-            // 
-            resources.ApplyResources(this.cB_ninthG2, "cB_ninthG2");
-            this.cB_ninthG2.FormattingEnabled = true;
-            this.cB_ninthG2.Name = "cB_ninthG2";
-            // 
-            // cB_tenthG2
-            // 
-            resources.ApplyResources(this.cB_tenthG2, "cB_tenthG2");
-            this.cB_tenthG2.FormattingEnabled = true;
-            this.cB_tenthG2.Name = "cB_tenthG2";
-            // 
-            // lbl_chart2
-            // 
-            resources.ApplyResources(this.lbl_chart2, "lbl_chart2");
-            this.lbl_chart2.Name = "lbl_chart2";
-            // 
             // lbl_chart1
             // 
             resources.ApplyResources(this.lbl_chart1, "lbl_chart1");
             this.lbl_chart1.Name = "lbl_chart1";
-            // 
-            // checkbox_chart2
-            // 
-            resources.ApplyResources(this.checkbox_chart2, "checkbox_chart2");
-            this.checkbox_chart2.Name = "checkbox_chart2";
-            this.checkbox_chart2.UseVisualStyleBackColor = true;
-            this.checkbox_chart2.CheckedChanged += new System.EventHandler(this.cB_dataCount_SelectedValueChanged);
             // 
             // colorDialog1
             // 
@@ -513,27 +420,16 @@
             this.Controls.Add(this.btn_clr3);
             this.Controls.Add(this.btn_clr2);
             this.Controls.Add(this.btn_clr1);
-            this.Controls.Add(this.checkbox_chart2);
             this.Controls.Add(this.btn_connect);
-            this.Controls.Add(this.cB_tenthG2);
             this.Controls.Add(this.cB_tenthG1);
-            this.Controls.Add(this.cB_ninthG2);
             this.Controls.Add(this.cB_ninthG1);
-            this.Controls.Add(this.cB_eighthG2);
             this.Controls.Add(this.cB_eighthG1);
-            this.Controls.Add(this.cB_seventhG2);
             this.Controls.Add(this.cB_seventhG1);
-            this.Controls.Add(this.cB_sixthG2);
             this.Controls.Add(this.cB_sixthG1);
-            this.Controls.Add(this.cB_fifthG2);
             this.Controls.Add(this.cB_fifthG1);
-            this.Controls.Add(this.cB_fourthG2);
             this.Controls.Add(this.cB_fourthG1);
-            this.Controls.Add(this.cB_thirdG2);
             this.Controls.Add(this.cB_thirdG1);
-            this.Controls.Add(this.cB_secondG2);
             this.Controls.Add(this.cB_secondG1);
-            this.Controls.Add(this.cB_firstG2);
             this.Controls.Add(this.cB_firstG1);
             this.Controls.Add(this.lbl_baundrate);
             this.Controls.Add(this.tB_tenthDataName);
@@ -555,7 +451,6 @@
             this.Controls.Add(this.tB_secondDataName);
             this.Controls.Add(this.lbl2);
             this.Controls.Add(this.tB_firstDataName);
-            this.Controls.Add(this.lbl_chart2);
             this.Controls.Add(this.lbl_chart1);
             this.Controls.Add(this.lbl1);
             this.Controls.Add(this.lbl_com);
@@ -611,19 +506,7 @@
         private System.Windows.Forms.ComboBox cB_eighthG1;
         private System.Windows.Forms.ComboBox cB_ninthG1;
         private System.Windows.Forms.ComboBox cB_tenthG1;
-        private System.Windows.Forms.ComboBox cB_firstG2;
-        private System.Windows.Forms.ComboBox cB_secondG2;
-        private System.Windows.Forms.ComboBox cB_thirdG2;
-        private System.Windows.Forms.ComboBox cB_fourthG2;
-        private System.Windows.Forms.ComboBox cB_fifthG2;
-        private System.Windows.Forms.ComboBox cB_sixthG2;
-        private System.Windows.Forms.ComboBox cB_seventhG2;
-        private System.Windows.Forms.ComboBox cB_eighthG2;
-        private System.Windows.Forms.ComboBox cB_ninthG2;
-        private System.Windows.Forms.ComboBox cB_tenthG2;
-        private System.Windows.Forms.Label lbl_chart2;
         private System.Windows.Forms.Label lbl_chart1;
-        private System.Windows.Forms.CheckBox checkbox_chart2;
         private System.Windows.Forms.ColorDialog colorDialog1;
         private System.Windows.Forms.Button btn_clr1;
         private System.Windows.Forms.Button btn_clr2;

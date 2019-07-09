@@ -2,6 +2,6 @@
 {
         public enum ChartTypeEnum
         {
-            NOT_SELECTED,LINE,COLUMN,NONE
+            NOT_SELECTED,LINE,COLUMN
         }
 }

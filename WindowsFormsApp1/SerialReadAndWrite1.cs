@@ -36,45 +36,53 @@ namespace WindowsFormsApp1
                 case 2:
                     return ChartTypeEnum.COLUMN;
 
-                case 3:
-                    return ChartTypeEnum.NONE;
-
                 default:
                     return ChartTypeEnum.NOT_SELECTED;
             }
 
         }
 
-        private bool ControlUINullName()
+        private bool ControlUINullNameOrChartType()
         {
             int dataCount = Convert.ToInt32(cB_dataCount.Items[cB_dataCount.SelectedIndex]);
-            if (tB_firstDataName.Text == "") return false;
-            if (dataCount >= 2) if (tB_secondDataName.Text == "") return false;
-            if (dataCount >= 3) if (tB_thirdDataName.Text == "") return false; 
-            if (dataCount >= 4) if (tB_fourthDataName.Text == "") return false; 
-            if (dataCount >= 5) if (tB_fifthDataName.Text == "") return false; 
-            if (dataCount >= 6) if (tB_sixthDataName.Text == "") return false; 
-            if (dataCount >= 7) if (tB_seventhDataName.Text == "") return false; 
-            if (dataCount >= 8) if (tB_eighthDataName.Text == "") return false; 
-            if (dataCount >= 9) if (tB_ninthDataName.Text == "") return false; 
-            if (dataCount >= 10) if (tB_tenthDataName.Text == "") return false;
-            return true;
+            if ((tB_firstDataName.Text == "")||(cB_firstG1.SelectedIndex==0)) return true;
+            if (dataCount >= 2) if ((tB_secondDataName.Text == "")|| (cB_secondG1.SelectedIndex == 0)) return true;
+            if (dataCount >= 3) if ((tB_thirdDataName.Text == "")|| (cB_thirdG1.SelectedIndex == 0)) return true; 
+            if (dataCount >= 4) if ((tB_fourthDataName.Text == "")|| (cB_fourthG1.SelectedIndex == 0)) return true; 
+            if (dataCount >= 5) if ((tB_fifthDataName.Text == "")|| (cB_fifthG1.SelectedIndex == 0)) return true; 
+            if (dataCount >= 6) if ((tB_sixthDataName.Text == "")|| (cB_sixthG1.SelectedIndex == 0)) return true; 
+            if (dataCount >= 7) if ((tB_seventhDataName.Text == "")|| (cB_seventhG1.SelectedIndex == 0)) return true; 
+            if (dataCount >= 8) if ((tB_eighthDataName.Text == "")|| (cB_eighthG1.SelectedIndex == 0)) return true; 
+            if (dataCount >= 9) if ((tB_ninthDataName.Text == "")|| (cB_ninthG1.SelectedIndex == 0)) return true; 
+            if (dataCount >= 10) if ((tB_tenthDataName.Text == "")|| (cB_tenthG1.SelectedIndex == 0)) return true;
+            return false;
 
+        }
+
+        private bool ControlSameString(string[] StringList, int LastCheckIndex)
+        {
+            for (int x = 0; x < LastCheckIndex+1; x++)
+            {
+                for (int y = 0; y < LastCheckIndex+1; y++)
+                {
+                    if ((StringList[x] == StringList[y]) && (x != y)) return true;
+                }
+            }
+            return false;
         }
 
         private void btn_connect_Click(object sender, EventArgs e)
         {
-            if (ControlUINullName()==false)
+            if (ControlUINullNameOrChartType()==true)
             {
-                MessageBox.Show("Lütfen kullanacağınız tüm verilere isim veriniz!");
+                MessageBox.Show("Lütfen kullanacağınız tüm verilere isim veriniz ve grafik türünü belirtiniz!");
                 return;
             }
 
             ChartTypeEnum[] chart1TypeEnum = new ChartTypeEnum[10];
-            ChartTypeEnum[] chart2TypeEnum = new ChartTypeEnum[10];
             string[] chartName = new string[10];
             Color[] dataColor = new Color[10];
-            string splitString = cB_splitChar.Text;
+            char splitString = Convert.ToChar(cB_splitChar.Text);
             int dataCount = Convert.ToInt32(cB_dataCount.Items[cB_dataCount.SelectedIndex]);
 
             chart1TypeEnum[0] = Chart_Cb_to_enum(cB_firstG1.SelectedIndex);
@@ -88,17 +96,6 @@ namespace WindowsFormsApp1
             chart1TypeEnum[8] = Chart_Cb_to_enum(cB_ninthG1.SelectedIndex);
             chart1TypeEnum[9] = Chart_Cb_to_enum(cB_tenthG1.SelectedIndex);
 
-            chart2TypeEnum[0] = Chart_Cb_to_enum(cB_firstG2.SelectedIndex);
-            chart2TypeEnum[1] = Chart_Cb_to_enum(cB_secondG2.SelectedIndex);
-            chart2TypeEnum[2] = Chart_Cb_to_enum(cB_thirdG2.SelectedIndex);
-            chart2TypeEnum[3] = Chart_Cb_to_enum(cB_fourthG2.SelectedIndex);
-            chart2TypeEnum[4] = Chart_Cb_to_enum(cB_fifthG2.SelectedIndex);
-            chart2TypeEnum[5] = Chart_Cb_to_enum(cB_sixthG2.SelectedIndex);
-            chart2TypeEnum[6] = Chart_Cb_to_enum(cB_seventhG2.SelectedIndex);
-            chart2TypeEnum[7] = Chart_Cb_to_enum(cB_eighthG2.SelectedIndex);
-            chart2TypeEnum[8] = Chart_Cb_to_enum(cB_ninthG2.SelectedIndex);
-            chart2TypeEnum[9] = Chart_Cb_to_enum(cB_tenthG2.SelectedIndex);
-
             chartName[0] = tB_firstDataName.Text;
             chartName[1] = tB_secondDataName.Text;
             chartName[2] = tB_thirdDataName.Text;
@@ -109,6 +106,14 @@ namespace WindowsFormsApp1
             chartName[7] = tB_eighthDataName.Text;
             chartName[8] = tB_ninthDataName.Text;
             chartName[9] = tB_tenthDataName.Text;
+            
+            if (ControlSameString(chartName, dataCount-1) == true)
+            {
+                MessageBox.Show("Lütfen kullanacağınız tüm verilere farklı isim veriniz!");
+                return;
+            }
+
+
 
             dataColor[0] = btn_clr1.BackColor;
             dataColor[1] = btn_clr2.BackColor;
@@ -121,31 +126,15 @@ namespace WindowsFormsApp1
             dataColor[8] = btn_clr9.BackColor;
             dataColor[9] = btn_clr10.BackColor;
 
-            SerialReadAndWrite2 Chart1 = new SerialReadAndWrite2(PortName, Baundrate, splitString, chartName, chart1TypeEnum, dataColor, "Chart1");
+            SerialReadAndWrite2 Chart1 = new SerialReadAndWrite2(PortName, Baundrate, splitString, dataCount, chartName, chart1TypeEnum, dataColor, "Chart1");
             Chart1.Show();
-
-            if(checkbox_chart2.Checked)
-            {
-                SerialReadAndWrite2 Chart2 = new SerialReadAndWrite2(PortName, Baundrate, splitString, chartName, chart2TypeEnum, dataColor, "Chart2");
-                Chart2.Show();
-            }
+            this.Hide();
 
 
         }
 
         private void cB_dataCount_SelectedValueChanged(object sender, EventArgs e)
         {
-            if (checkbox_chart2.Checked)
-            {
-                lbl_chart2.Show();
-                SerialReadAndWrite1.ActiveForm.Width = 526;
-            }
-            else
-            {
-                lbl_chart2.Hide();
-                SerialReadAndWrite1.ActiveForm.Width = 405;
-            }
-
             switch(cB_dataCount.SelectedIndex)
             {
                 case 0:
@@ -193,38 +182,7 @@ namespace WindowsFormsApp1
                     cB_ninthG1.Hide();
                     cB_tenthG1.Hide();
 
-                    if (checkbox_chart2.Checked)
-                    {
-                        lbl_chart2.Show();
-                        btn_connect.Location = new Point(217, 130);
-                        cB_firstG2.Show();
-                        cB_secondG2.Hide();
-                        cB_thirdG2.Hide();
-                        cB_fourthG2.Hide();
-                        cB_fifthG2.Hide();
-                        cB_sixthG2.Hide();
-                        cB_seventhG2.Hide();
-                        cB_eighthG2.Hide();
-                        cB_ninthG2.Hide();
-                        cB_tenthG2.Hide();
-                    }
-                    else
-                    {
-                        lbl_chart2.Hide();
-                        btn_connect.Location = new Point(147, 130);
-                        cB_firstG2.Hide();
-                        cB_secondG2.Hide();
-                        cB_thirdG2.Hide();
-                        cB_fourthG2.Hide();
-                        cB_fifthG2.Hide();
-                        cB_sixthG2.Hide();
-                        cB_seventhG2.Hide();
-                        cB_eighthG2.Hide();
-                        cB_ninthG2.Hide();
-                        cB_tenthG2.Hide();
-                    }
-
-
+                    btn_connect.Location = new Point(148, 130);
                     SerialReadAndWrite1.ActiveForm.Height = 215;
                     break;
 
@@ -273,35 +231,7 @@ namespace WindowsFormsApp1
                     cB_ninthG1.Hide();
                     cB_tenthG1.Hide();
 
-                    if (checkbox_chart2.Checked)
-                    {
-                        btn_connect.Location = new Point(217, 155);
-                        cB_firstG2.Show();
-                        cB_secondG2.Show();
-                        cB_thirdG2.Hide();
-                        cB_fourthG2.Hide();
-                        cB_fifthG2.Hide();
-                        cB_sixthG2.Hide();
-                        cB_seventhG2.Hide();
-                        cB_eighthG2.Hide();
-                        cB_ninthG2.Hide();
-                        cB_tenthG2.Hide();
-                    }
-                    else
-                    {
-                        btn_connect.Location = new Point(147, 155);
-                        cB_firstG2.Hide();
-                        cB_secondG2.Hide();
-                        cB_thirdG2.Hide();
-                        cB_fourthG2.Hide();
-                        cB_fifthG2.Hide();
-                        cB_sixthG2.Hide();
-                        cB_seventhG2.Hide();
-                        cB_eighthG2.Hide();
-                        cB_ninthG2.Hide();
-                        cB_tenthG2.Hide();
-                    }
-
+                    btn_connect.Location = new Point(148, 155);
                     SerialReadAndWrite1.ActiveForm.Height = 240;
                     break;
 
@@ -350,35 +280,7 @@ namespace WindowsFormsApp1
                     cB_ninthG1.Hide();
                     cB_tenthG1.Hide();
 
-                    if (checkbox_chart2.Checked)
-                    {
-                        btn_connect.Location = new Point(217, 180);
-                        cB_firstG2.Show();
-                        cB_secondG2.Show();
-                        cB_thirdG2.Show();
-                        cB_fourthG2.Hide();
-                        cB_fifthG2.Hide();
-                        cB_sixthG2.Hide();
-                        cB_seventhG2.Hide();
-                        cB_eighthG2.Hide();
-                        cB_ninthG2.Hide();
-                        cB_tenthG2.Hide();
-                    }
-                    else
-                    {
-                        btn_connect.Location = new Point(147, 180);
-                        cB_firstG2.Hide();
-                        cB_secondG2.Hide();
-                        cB_thirdG2.Hide();
-                        cB_fourthG2.Hide();
-                        cB_fifthG2.Hide();
-                        cB_sixthG2.Hide();
-                        cB_seventhG2.Hide();
-                        cB_eighthG2.Hide();
-                        cB_ninthG2.Hide();
-                        cB_tenthG2.Hide();
-                    }
-
+                    btn_connect.Location = new Point(148, 180);
                     SerialReadAndWrite1.ActiveForm.Height = 265;
                     break;
 
@@ -427,35 +329,7 @@ namespace WindowsFormsApp1
                     cB_ninthG1.Hide();
                     cB_tenthG1.Hide();
 
-                    if (checkbox_chart2.Checked)
-                    {
-                        btn_connect.Location = new Point(217, 205);
-                        cB_firstG2.Show();
-                        cB_secondG2.Show();
-                        cB_thirdG2.Show();
-                        cB_fourthG2.Show();
-                        cB_fifthG2.Hide();
-                        cB_sixthG2.Hide();
-                        cB_seventhG2.Hide();
-                        cB_eighthG2.Hide();
-                        cB_ninthG2.Hide();
-                        cB_tenthG2.Hide();
-                    }
-                    else
-                    {
-                        btn_connect.Location = new Point(147, 205);
-                        cB_firstG2.Hide();
-                        cB_secondG2.Hide();
-                        cB_thirdG2.Hide();
-                        cB_fourthG2.Hide();
-                        cB_fifthG2.Hide();
-                        cB_sixthG2.Hide();
-                        cB_seventhG2.Hide();
-                        cB_eighthG2.Hide();
-                        cB_ninthG2.Hide();
-                        cB_tenthG2.Hide();
-                    }
-
+                    btn_connect.Location = new Point(148, 205);
                     SerialReadAndWrite1.ActiveForm.Height = 290;
                     break;
 
@@ -504,35 +378,7 @@ namespace WindowsFormsApp1
                     cB_ninthG1.Hide();
                     cB_tenthG1.Hide();
 
-                    if (checkbox_chart2.Checked)
-                    {
-                        btn_connect.Location = new Point(217, 230);
-                        cB_firstG2.Show();
-                        cB_secondG2.Show();
-                        cB_thirdG2.Show();
-                        cB_fourthG2.Show();
-                        cB_fifthG2.Show();
-                        cB_sixthG2.Hide();
-                        cB_seventhG2.Hide();
-                        cB_eighthG2.Hide();
-                        cB_ninthG2.Hide();
-                        cB_tenthG2.Hide();
-                    }
-                    else
-                    {
-                        btn_connect.Location = new Point(147, 230);
-                        cB_firstG2.Hide();
-                        cB_secondG2.Hide();
-                        cB_thirdG2.Hide();
-                        cB_fourthG2.Hide();
-                        cB_fifthG2.Hide();
-                        cB_sixthG2.Hide();
-                        cB_seventhG2.Hide();
-                        cB_eighthG2.Hide();
-                        cB_ninthG2.Hide();
-                        cB_tenthG2.Hide();
-                    }
-
+                    btn_connect.Location = new Point(148, 230);
                     SerialReadAndWrite1.ActiveForm.Height = 315;
                     break;
 
@@ -581,35 +427,7 @@ namespace WindowsFormsApp1
                     cB_ninthG1.Hide();
                     cB_tenthG1.Hide();
 
-                    if (checkbox_chart2.Checked)
-                    {
-                        btn_connect.Location = new Point(217, 255);
-                        cB_firstG2.Show();
-                        cB_secondG2.Show();
-                        cB_thirdG2.Show();
-                        cB_fourthG2.Show();
-                        cB_fifthG2.Show();
-                        cB_sixthG2.Show();
-                        cB_seventhG2.Hide();
-                        cB_eighthG2.Hide();
-                        cB_ninthG2.Hide();
-                        cB_tenthG2.Hide();
-                    }
-                    else
-                    {
-                        btn_connect.Location = new Point(147, 255);
-                        cB_firstG2.Hide();
-                        cB_secondG2.Hide();
-                        cB_thirdG2.Hide();
-                        cB_fourthG2.Hide();
-                        cB_fifthG2.Hide();
-                        cB_sixthG2.Hide();
-                        cB_seventhG2.Hide();
-                        cB_eighthG2.Hide();
-                        cB_ninthG2.Hide();
-                        cB_tenthG2.Hide();
-                    }
-
+                    btn_connect.Location = new Point(148, 255);
                     SerialReadAndWrite1.ActiveForm.Height = 340;
                     break;
 
@@ -658,35 +476,7 @@ namespace WindowsFormsApp1
                     cB_ninthG1.Hide();
                     cB_tenthG1.Hide();
 
-                    if (checkbox_chart2.Checked)
-                    {
-                        btn_connect.Location = new Point(217, 280);
-                        cB_firstG2.Show();
-                        cB_secondG2.Show();
-                        cB_thirdG2.Show();
-                        cB_fourthG2.Show();
-                        cB_fifthG2.Show();
-                        cB_sixthG2.Show();
-                        cB_seventhG2.Show();
-                        cB_eighthG2.Hide();
-                        cB_ninthG2.Hide();
-                        cB_tenthG2.Hide();
-                    }
-                    else
-                    {
-                        btn_connect.Location = new Point(147, 280);
-                        cB_firstG2.Hide();
-                        cB_secondG2.Hide();
-                        cB_thirdG2.Hide();
-                        cB_fourthG2.Hide();
-                        cB_fifthG2.Hide();
-                        cB_sixthG2.Hide();
-                        cB_seventhG2.Hide();
-                        cB_eighthG2.Hide();
-                        cB_ninthG2.Hide();
-                        cB_tenthG2.Hide();
-                    }
-
+                    btn_connect.Location = new Point(148, 280);
                     SerialReadAndWrite1.ActiveForm.Height = 365;
                     break;
 
@@ -735,35 +525,7 @@ namespace WindowsFormsApp1
                     cB_ninthG1.Hide();
                     cB_tenthG1.Hide();
 
-                    if (checkbox_chart2.Checked)
-                    {
-                        btn_connect.Location = new Point(217, 305);
-                        cB_firstG2.Show();
-                        cB_secondG2.Show();
-                        cB_thirdG2.Show();
-                        cB_fourthG2.Show();
-                        cB_fifthG2.Show();
-                        cB_sixthG2.Show();
-                        cB_seventhG2.Show();
-                        cB_eighthG2.Show();
-                        cB_ninthG2.Hide();
-                        cB_tenthG2.Hide();
-                    }
-                    else
-                    {
-                        btn_connect.Location = new Point(147, 305);
-                        cB_firstG2.Hide();
-                        cB_secondG2.Hide();
-                        cB_thirdG2.Hide();
-                        cB_fourthG2.Hide();
-                        cB_fifthG2.Hide();
-                        cB_sixthG2.Hide();
-                        cB_seventhG2.Hide();
-                        cB_eighthG2.Hide();
-                        cB_ninthG2.Hide();
-                        cB_tenthG2.Hide();
-                    }
-
+                    btn_connect.Location = new Point(148, 305);
                     SerialReadAndWrite1.ActiveForm.Height = 390;
                     break;
 
@@ -812,35 +574,7 @@ namespace WindowsFormsApp1
                     cB_ninthG1.Show();
                     cB_tenthG1.Hide();
 
-                    if (checkbox_chart2.Checked)
-                    {
-                        btn_connect.Location = new Point(217, 330);
-                        cB_firstG2.Show();
-                        cB_secondG2.Show();
-                        cB_thirdG2.Show();
-                        cB_fourthG2.Show();
-                        cB_fifthG2.Show();
-                        cB_sixthG2.Show();
-                        cB_seventhG2.Show();
-                        cB_eighthG2.Show();
-                        cB_ninthG2.Show();
-                        cB_tenthG2.Hide();
-                    }
-                    else
-                    {
-                        btn_connect.Location = new Point(147, 330);
-                        cB_firstG2.Hide();
-                        cB_secondG2.Hide();
-                        cB_thirdG2.Hide();
-                        cB_fourthG2.Hide();
-                        cB_fifthG2.Hide();
-                        cB_sixthG2.Hide();
-                        cB_seventhG2.Hide();
-                        cB_eighthG2.Hide();
-                        cB_ninthG2.Hide();
-                        cB_tenthG2.Hide();
-                    }
-
+                    btn_connect.Location = new Point(148, 330);
                     SerialReadAndWrite1.ActiveForm.Height = 415;
                     break;
 
@@ -889,35 +623,7 @@ namespace WindowsFormsApp1
                     cB_ninthG1.Show();
                     cB_tenthG1.Show();
 
-                    if (checkbox_chart2.Checked)
-                    {
-                        btn_connect.Location = new Point(217, 355);
-                        cB_firstG2.Show();
-                        cB_secondG2.Show();
-                        cB_thirdG2.Show();
-                        cB_fourthG2.Show();
-                        cB_fifthG2.Show();
-                        cB_sixthG2.Show();
-                        cB_seventhG2.Show();
-                        cB_eighthG2.Show();
-                        cB_ninthG2.Show();
-                        cB_tenthG2.Show();
-                    }
-                    else
-                    {
-                        btn_connect.Location = new Point(147, 355);
-                        cB_firstG2.Hide();
-                        cB_secondG2.Hide();
-                        cB_thirdG2.Hide();
-                        cB_fourthG2.Hide();
-                        cB_fifthG2.Hide();
-                        cB_sixthG2.Hide();
-                        cB_seventhG2.Hide();
-                        cB_eighthG2.Hide();
-                        cB_ninthG2.Hide();
-                        cB_tenthG2.Hide();
-                    }
-
+                    btn_connect.Location = new Point(148, 355);
                     SerialReadAndWrite1.ActiveForm.Height = 440;
                     break;
 
@@ -927,16 +633,19 @@ namespace WindowsFormsApp1
             }
         }
 
+        //Kapanırken önceki formu açmak
+
         private void SerialReadAndWrite1_FormClosed(object sender, FormClosedEventArgs e)
         {
             SerialReadAndWrite serialReadAndWrite = new SerialReadAndWrite();
             serialReadAndWrite.Show();
         }
 
+
+
+
         private void SerialReadAndWrite1_Load(object sender, EventArgs e)
         {
-            lbl_chart2.Hide();
-
             lbl1.Show();
             lbl2.Hide();
             lbl3.Hide();
@@ -980,22 +689,11 @@ namespace WindowsFormsApp1
             cB_eighthG1.Hide();
             cB_ninthG1.Hide();
             cB_tenthG1.Hide();
-            
-            cB_firstG2.Hide();
-            cB_secondG2.Hide();
-            cB_thirdG2.Hide();
-            cB_fourthG2.Hide();
-            cB_fifthG2.Hide();
-            cB_sixthG2.Hide();
-            cB_seventhG2.Hide();
-            cB_eighthG2.Hide();
-            cB_ninthG2.Hide();
-            cB_tenthG2.Hide();
 
-            btn_connect.Location = new Point(147, 130);
+            btn_connect.Location = new Point(148, 130);
 
             //Grafik Türlerinin ComboBoxlara Yerleştirilmesi
-            string[] chartTypes = { "Grafik Türü Seçin","Çizgi","Sutun","Oluşturma"};
+            string[] chartTypes = { "Grafik Türü Seçin","Çizgi","Sutun"};
 
             cB_firstG1.Items.AddRange(chartTypes);
             cB_secondG1.Items.AddRange(chartTypes);
@@ -1006,18 +704,7 @@ namespace WindowsFormsApp1
             cB_seventhG1.Items.AddRange(chartTypes); 
             cB_eighthG1.Items.AddRange(chartTypes); 
             cB_ninthG1.Items.AddRange(chartTypes); 
-            cB_tenthG1.Items.AddRange(chartTypes); 
-
-            cB_firstG2.Items.AddRange(chartTypes); 
-            cB_secondG2.Items.AddRange(chartTypes); 
-            cB_thirdG2.Items.AddRange(chartTypes);
-            cB_fourthG2.Items.AddRange(chartTypes); 
-            cB_fifthG2.Items.AddRange(chartTypes); 
-            cB_sixthG2.Items.AddRange(chartTypes); 
-            cB_seventhG2.Items.AddRange(chartTypes); 
-            cB_eighthG2.Items.AddRange(chartTypes); 
-            cB_ninthG2.Items.AddRange(chartTypes); 
-            cB_tenthG2.Items.AddRange(chartTypes);
+            cB_tenthG1.Items.AddRange(chartTypes);
 
             cB_dataCount.SelectedIndex = 0;
             cB_splitChar.SelectedIndex = 0;
@@ -1032,17 +719,6 @@ namespace WindowsFormsApp1
             cB_eighthG1.SelectedIndex = 0;
             cB_ninthG1.SelectedIndex = 0;
             cB_tenthG1.SelectedIndex = 0;
-
-            cB_firstG2.SelectedIndex = 0;
-            cB_secondG2.SelectedIndex = 0;
-            cB_thirdG2.SelectedIndex = 0;
-            cB_fourthG2.SelectedIndex = 0;
-            cB_fifthG2.SelectedIndex = 0;
-            cB_sixthG2.SelectedIndex = 0;
-            cB_seventhG2.SelectedIndex = 0;
-            cB_eighthG2.SelectedIndex = 0;
-            cB_ninthG2.SelectedIndex = 0;
-            cB_tenthG2.SelectedIndex = 0;
         }
 
         private void SerialReadAndWrite1_Shown(object sender, EventArgs e)
@@ -1050,6 +726,9 @@ namespace WindowsFormsApp1
             SerialReadAndWrite1.ActiveForm.Height = 215;
             SerialReadAndWrite1.ActiveForm.Width = 405;
         }
+
+
+        //Renk belirleme
 
         private void btn_clr1_Click(object sender, EventArgs e)
         {

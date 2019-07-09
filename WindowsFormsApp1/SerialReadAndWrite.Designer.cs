@@ -119,6 +119,7 @@
             this.Controls.Add(this.cB_serialPort);
             this.Name = "SerialReadAndWrite";
             this.Text = "Seri Port Bağlantı";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.SerialReadAndWrite_FormClosed);
             this.Load += new System.EventHandler(this.Baglanti_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

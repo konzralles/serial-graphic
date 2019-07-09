@@ -49,5 +49,11 @@ namespace WindowsFormsApp1
                 this.Hide();
             }
         }
+
+        private void SerialReadAndWrite_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
+            //Environment.Exit(0);
+        }
     }
 }

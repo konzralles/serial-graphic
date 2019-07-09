@@ -120,10 +120,6 @@
   <data name="&gt;&gt;tB_firstDataName.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="tB_thirdDataName.Visible" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
   <data name="&gt;&gt;btn_clr9.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
@@ -143,14 +139,12 @@
   <data name="&gt;&gt;btn_connect.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="btn_clr3.TabIndex" type="System.Int32, mscorlib">
     <value>11</value>
   </data>
   <data name="&gt;&gt;btn_clr5.Name" xml:space="preserve">
     <value>btn_clr5</value>
-  </data>
-  <data name="&gt;&gt;lbl1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;btn_clr6.Parent" xml:space="preserve">
     <value>$this</value>
@@ -163,9 +157,6 @@
   </data>
   <data name="lbl10.Visible" type="System.Boolean, mscorlib">
     <value>False</value>
-  </data>
-  <data name="tB_fifthDataName.Location" type="System.Drawing.Point, System.Drawing">
-    <value>121, 201</value>
   </data>
   <data name="lbl1.Location" type="System.Drawing.Point, System.Drawing">
     <value>56, 100</value>
@@ -200,8 +191,8 @@
   <data name="&gt;&gt;cB_seventhG2.Type" xml:space="preserve">
     <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="btn_clr10.TabIndex" type="System.Int32, mscorlib">
-    <value>11</value>
+  <data name="lbl2.Text" xml:space="preserve">
+    <value>2. Bilgi İsmi</value>
   </data>
   <data name="&gt;&gt;tB_fourthDataName.Parent" xml:space="preserve">
     <value>$this</value>
@@ -211,9 +202,6 @@
   </data>
   <data name="&gt;&gt;checkbox_chart2.Type" xml:space="preserve">
     <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="cB_splitChar.Items16" xml:space="preserve">
-    <value>\\</value>
   </data>
   <data name="cB_eighthG1.Location" type="System.Drawing.Point, System.Drawing">
     <value>248, 279</value>
@@ -264,7 +252,7 @@
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;cB_dataCount.ZOrder" xml:space="preserve">
-    <value>61</value>
+    <value>49</value>
   </data>
   <data name="tB_fourthDataName.Location" type="System.Drawing.Point, System.Drawing">
     <value>121, 175</value>
@@ -307,7 +295,7 @@
     <value>248, 123</value>
   </data>
   <data name="&gt;&gt;lbl9.ZOrder" xml:space="preserve">
-    <value>38</value>
+    <value>27</value>
   </data>
   <data name="&gt;&gt;btn_clr10.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -322,22 +310,19 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;cB_tenthG1.ZOrder" xml:space="preserve">
-    <value>15</value>
+    <value>13</value>
   </data>
-  <data name="label1.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
+  <data name="cB_eighthG2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>121, 21</value>
   </data>
   <data name="tB_secondDataName.Visible" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
-  <data name="cB_sixthG1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>121, 21</value>
-  </data>
   <data name="label2.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
   </data>
-  <data name="&gt;&gt;tB_thirdDataName.Parent" xml:space="preserve">
-    <value>$this</value>
+  <data name="cB_firstG1.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
   </data>
   <data name="&gt;&gt;btn_clr3.Parent" xml:space="preserve">
     <value>$this</value>
@@ -375,11 +360,8 @@
   <data name="btn_clr10.Location" type="System.Drawing.Point, System.Drawing">
     <value>35, 333</value>
   </data>
-  <data name="btn_clr4.Size" type="System.Drawing.Size, System.Drawing">
-    <value>15, 15</value>
-  </data>
   <data name="&gt;&gt;tB_ninthDataName.ZOrder" xml:space="preserve">
-    <value>37</value>
+    <value>26</value>
   </data>
   <data name="lbl7.Size" type="System.Drawing.Size, System.Drawing">
     <value>59, 13</value>
@@ -408,14 +390,14 @@
   <data name="btn_clr5.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
   </data>
-  <data name="cB_firstG1.TabIndex" type="System.Int32, mscorlib">
-    <value>8</value>
+  <data name="lbl_baundrate.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
   </data>
-  <data name="lbl_chart2.Text" xml:space="preserve">
-    <value>Grafik 2</value>
+  <data name="btn_clr4.Size" type="System.Drawing.Size, System.Drawing">
+    <value>15, 15</value>
   </data>
   <data name="&gt;&gt;cB_fifthG1.ZOrder" xml:space="preserve">
-    <value>25</value>
+    <value>18</value>
   </data>
   <data name="&gt;&gt;tB_firstDataName.Type" xml:space="preserve">
     <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -425,6 +407,9 @@
   </data>
   <data name="&gt;&gt;btn_clr3.ZOrder" xml:space="preserve">
     <value>9</value>
+  </data>
+  <data name="&gt;&gt;lbl4.ZOrder" xml:space="preserve">
+    <value>37</value>
   </data>
   <data name="&gt;&gt;cB_firstG1.Type" xml:space="preserve">
     <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -444,14 +429,11 @@
   <data name="&gt;&gt;lbl_chart2.Name" xml:space="preserve">
     <value>lbl_chart2</value>
   </data>
-  <data name="cB_secondG2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>121, 21</value>
+  <data name="&gt;&gt;tB_fourthDataName.Name" xml:space="preserve">
+    <value>tB_fourthDataName</value>
   </data>
   <data name="label1.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
-  </data>
-  <data name="&gt;&gt;tB_tenthDataName.Parent" xml:space="preserve">
-    <value>$this</value>
   </data>
   <data name="lbl2.Location" type="System.Drawing.Point, System.Drawing">
     <value>56, 126</value>
@@ -468,8 +450,11 @@
   <data name="tB_firstDataName.Size" type="System.Drawing.Size, System.Drawing">
     <value>121, 20</value>
   </data>
+  <data name="btn_clr2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>15, 15</value>
+  </data>
   <data name="&gt;&gt;lbl7.ZOrder" xml:space="preserve">
-    <value>42</value>
+    <value>31</value>
   </data>
   <data name="lbl3.Visible" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -481,13 +466,13 @@
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;lbl2.ZOrder" xml:space="preserve">
-    <value>52</value>
+    <value>41</value>
   </data>
   <data name="&gt;&gt;cB_ninthG1.Name" xml:space="preserve">
     <value>cB_ninthG1</value>
   </data>
   <data name="&gt;&gt;label2.ZOrder" xml:space="preserve">
-    <value>58</value>
+    <value>46</value>
   </data>
   <data name="&gt;&gt;cB_tenthG1.Type" xml:space="preserve">
     <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -501,8 +486,8 @@
   <data name="&gt;&gt;btn_clr1.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="cB_tenthG1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>121, 21</value>
+  <data name="&gt;&gt;label1.ZOrder" xml:space="preserve">
+    <value>47</value>
   </data>
   <data name="cB_sixthG1.Location" type="System.Drawing.Point, System.Drawing">
     <value>248, 227</value>
@@ -511,7 +496,7 @@
     <value>121, 20</value>
   </data>
   <data name="&gt;&gt;tB_secondDataName.ZOrder" xml:space="preserve">
-    <value>51</value>
+    <value>40</value>
   </data>
   <data name="cB_fifthG2.TabIndex" type="System.Int32, mscorlib">
     <value>8</value>
@@ -559,7 +544,10 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;lbl3.ZOrder" xml:space="preserve">
-    <value>50</value>
+    <value>39</value>
+  </data>
+  <data name="btn_clr3.Size" type="System.Drawing.Size, System.Drawing">
+    <value>15, 15</value>
   </data>
   <data name="label2.Location" type="System.Drawing.Point, System.Drawing">
     <value>10, 65</value>
@@ -567,20 +555,14 @@
   <data name="&gt;&gt;lbl1.Name" xml:space="preserve">
     <value>lbl1</value>
   </data>
-  <data name="btn_clr7.Location" type="System.Drawing.Point, System.Drawing">
-    <value>35, 255</value>
-  </data>
   <data name="&gt;&gt;cB_tenthG1.Parent" xml:space="preserve">
     <value>$this</value>
-  </data>
-  <data name="cB_eighthG2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>121, 21</value>
   </data>
   <data name="&gt;&gt;tB_thirdDataName.Type" xml:space="preserve">
     <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;cB_eighthG1.ZOrder" xml:space="preserve">
-    <value>19</value>
+    <value>15</value>
   </data>
   <data name="&gt;&gt;cB_tenthG2.Type" xml:space="preserve">
     <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -598,7 +580,7 @@
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;tB_tenthDataName.ZOrder" xml:space="preserve">
-    <value>35</value>
+    <value>24</value>
   </data>
   <data name="&gt;&gt;cB_fifthG1.Parent" xml:space="preserve">
     <value>$this</value>
@@ -615,8 +597,11 @@
   <data name="lbl_chart2.Location" type="System.Drawing.Point, System.Drawing">
     <value>410, 81</value>
   </data>
-  <data name="&gt;&gt;tB_fourthDataName.Name" xml:space="preserve">
-    <value>tB_fourthDataName</value>
+  <data name="tB_fifthDataName.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="btn_connect.Location" type="System.Drawing.Point, System.Drawing">
+    <value>217, 130</value>
   </data>
   <data name="&gt;&gt;lbl3.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -651,6 +636,9 @@
   <data name="lbl9.Visible" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
+  <data name="cB_fifthG1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>248, 201</value>
+  </data>
   <data name="lbl8.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
   </data>
@@ -679,7 +667,7 @@
     <value>121, 253</value>
   </data>
   <data name="&gt;&gt;tB_sixthDataName.ZOrder" xml:space="preserve">
-    <value>43</value>
+    <value>32</value>
   </data>
   <data name="&gt;&gt;cB_thirdG1.Type" xml:space="preserve">
     <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -718,10 +706,10 @@
     <value>colorDialog1</value>
   </data>
   <data name="&gt;&gt;lbl8.ZOrder" xml:space="preserve">
-    <value>40</value>
+    <value>29</value>
   </data>
-  <data name="lbl6.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
+  <data name="btn_clr10.TabIndex" type="System.Int32, mscorlib">
+    <value>11</value>
   </data>
   <data name="&gt;&gt;cB_ninthG2.ZOrder" xml:space="preserve">
     <value>16</value>
@@ -742,7 +730,7 @@
     <value>GrowAndShrink</value>
   </data>
   <data name="&gt;&gt;cB_ninthG1.ZOrder" xml:space="preserve">
-    <value>17</value>
+    <value>14</value>
   </data>
   <data name="tB_secondDataName.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
@@ -757,7 +745,7 @@
     <value>btn_clr2</value>
   </data>
   <data name="&gt;&gt;cB_secondG1.ZOrder" xml:space="preserve">
-    <value>31</value>
+    <value>21</value>
   </data>
   <data name="cB_splitChar.Items11" xml:space="preserve">
     <value>||</value>
@@ -774,8 +762,8 @@
   <data name="btn_connect.Size" type="System.Drawing.Size, System.Drawing">
     <value>183, 23</value>
   </data>
-  <data name="cB_dataCount.Size" type="System.Drawing.Size, System.Drawing">
-    <value>121, 21</value>
+  <data name="&gt;&gt;label1.Name" xml:space="preserve">
+    <value>label1</value>
   </data>
   <data name="&gt;&gt;btn_clr3.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -792,6 +780,9 @@
   <data name="lbl5.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
+  <data name="lbl8.Text" xml:space="preserve">
+    <value>8. Bilgi İsmi</value>
+  </data>
   <data name="btn_clr8.Location" type="System.Drawing.Point, System.Drawing">
     <value>35, 281</value>
   </data>
@@ -801,20 +792,17 @@
   <data name="&gt;&gt;btn_clr10.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="tB_thirdDataName.Size" type="System.Drawing.Size, System.Drawing">
-    <value>121, 20</value>
+  <data name="label4.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
   </data>
   <data name="cB_dataCount.Items7" xml:space="preserve">
     <value>8</value>
   </data>
-  <data name="cB_sixthG2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>121, 21</value>
-  </data>
   <data name="label1.Text" xml:space="preserve">
     <value>Bilgi Sayısı</value>
   </data>
-  <data name="btn_connect.Location" type="System.Drawing.Point, System.Drawing">
-    <value>217, 130</value>
+  <data name="&gt;&gt;btn_clr8.Name" xml:space="preserve">
+    <value>btn_clr8</value>
   </data>
   <data name="&gt;&gt;cB_secondG1.Parent" xml:space="preserve">
     <value>$this</value>
@@ -828,17 +816,8 @@
   <data name="&gt;&gt;lbl4.Name" xml:space="preserve">
     <value>lbl4</value>
   </data>
-  <data name="label4.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
   <data name="btn_clr6.Location" type="System.Drawing.Point, System.Drawing">
     <value>35, 229</value>
-  </data>
-  <data name="&gt;&gt;tB_fifthDataName.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;cB_thirdG2.Parent" xml:space="preserve">
-    <value>$this</value>
   </data>
   <data name="tB_firstDataName.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
@@ -856,10 +835,13 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;lbl_baundrate.ZOrder" xml:space="preserve">
-    <value>34</value>
+    <value>23</value>
   </data>
   <data name="lbl6.Text" xml:space="preserve">
     <value>6. Bilgi İsmi</value>
+  </data>
+  <data name="&gt;&gt;tB_thirdDataName.Parent" xml:space="preserve">
+    <value>$this</value>
   </data>
   <data name="&gt;&gt;cB_firstG2.Name" xml:space="preserve">
     <value>cB_firstG2</value>
@@ -867,11 +849,17 @@
   <data name="tB_eighthDataName.Location" type="System.Drawing.Point, System.Drawing">
     <value>121, 279</value>
   </data>
+  <data name="lbl_chart2.Text" xml:space="preserve">
+    <value>Grafik 2</value>
+  </data>
   <data name="&gt;&gt;btn_clr8.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
   <data name="cB_firstG2.TabIndex" type="System.Int32, mscorlib">
     <value>8</value>
+  </data>
+  <data name="&gt;&gt;lbl5.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="tB_firstDataName.Location" type="System.Drawing.Point, System.Drawing">
     <value>121, 97</value>
@@ -880,10 +868,13 @@
     <value>&lt;&lt;</value>
   </data>
   <data name="&gt;&gt;lbl5.ZOrder" xml:space="preserve">
-    <value>46</value>
+    <value>35</value>
   </data>
   <data name="cB_fourthG2.Size" type="System.Drawing.Size, System.Drawing">
     <value>121, 21</value>
+  </data>
+  <data name="&gt;&gt;cB_eighthG2.Name" xml:space="preserve">
+    <value>cB_eighthG2</value>
   </data>
   <data name="lbl1.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
@@ -924,14 +915,14 @@
   <data name="lbl5.Text" xml:space="preserve">
     <value>5. Bilgi İsmi</value>
   </data>
-  <data name="&gt;&gt;cB_dataCount.Name" xml:space="preserve">
-    <value>cB_dataCount</value>
-  </data>
   <data name="checkbox_chart2.Size" type="System.Drawing.Size, System.Drawing">
     <value>63, 17</value>
   </data>
-  <data name="tB_fifthDataName.Visible" type="System.Boolean, mscorlib">
-    <value>False</value>
+  <data name="cB_dataCount.Size" type="System.Drawing.Size, System.Drawing">
+    <value>121, 21</value>
+  </data>
+  <data name="&gt;&gt;tB_tenthDataName.Parent" xml:space="preserve">
+    <value>$this</value>
   </data>
   <data name="lbl8.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -960,14 +951,17 @@
   <data name="lbl_com.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="&gt;&gt;btn_clr8.Name" xml:space="preserve">
-    <value>btn_clr8</value>
+  <data name="cB_secondG2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>121, 21</value>
+  </data>
+  <data name="btn_clr7.Size" type="System.Drawing.Size, System.Drawing">
+    <value>15, 15</value>
   </data>
   <data name="lbl8.Location" type="System.Drawing.Point, System.Drawing">
     <value>56, 282</value>
   </data>
   <data name="&gt;&gt;lbl_chart1.ZOrder" xml:space="preserve">
-    <value>55</value>
+    <value>43</value>
   </data>
   <data name="btn_clr7.TabIndex" type="System.Int32, mscorlib">
     <value>11</value>
@@ -979,7 +973,7 @@
     <value>Flat</value>
   </data>
   <data name="&gt;&gt;lbl10.ZOrder" xml:space="preserve">
-    <value>36</value>
+    <value>25</value>
   </data>
   <data name="checkbox_chart2.Text" xml:space="preserve">
     <value>Grafik 2</value>
@@ -987,8 +981,8 @@
   <data name="&gt;&gt;cB_fifthG1.Type" xml:space="preserve">
     <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="cB_fifthG1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>248, 201</value>
+  <data name="tB_fifthDataName.Location" type="System.Drawing.Point, System.Drawing">
+    <value>121, 201</value>
   </data>
   <data name="&gt;&gt;cB_splitChar.Parent" xml:space="preserve">
     <value>$this</value>
@@ -1011,6 +1005,9 @@
   <data name="lbl2.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
   </data>
+  <data name="tB_thirdDataName.Size" type="System.Drawing.Size, System.Drawing">
+    <value>121, 20</value>
+  </data>
   <data name="btn_clr9.Size" type="System.Drawing.Size, System.Drawing">
     <value>15, 15</value>
   </data>
@@ -1029,9 +1026,6 @@
   <data name="&gt;&gt;cB_seventhG2.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;cB_thirdG1.ZOrder" xml:space="preserve">
-    <value>29</value>
-  </data>
   <data name="&gt;&gt;tB_secondDataName.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
@@ -1046,9 +1040,6 @@
   </data>
   <data name="&gt;&gt;cB_fourthG1.Name" xml:space="preserve">
     <value>cB_fourthG1</value>
-  </data>
-  <data name="&gt;&gt;label1.Name" xml:space="preserve">
-    <value>label1</value>
   </data>
   <data name="lbl1.Text" xml:space="preserve">
     <value>1. Bilgi İsmi</value>
@@ -1068,8 +1059,8 @@
   <data name="btn_clr5.TabIndex" type="System.Int32, mscorlib">
     <value>11</value>
   </data>
-  <data name="btn_clr10.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
-    <value>Flat</value>
+  <data name="tB_secondDataName.Size" type="System.Drawing.Size, System.Drawing">
+    <value>121, 20</value>
   </data>
   <data name="lbl9.Text" xml:space="preserve">
     <value>9. Bilgi İsmi</value>
@@ -1105,7 +1096,7 @@
     <value>56, 308</value>
   </data>
   <data name="&gt;&gt;tB_seventhDataName.ZOrder" xml:space="preserve">
-    <value>41</value>
+    <value>30</value>
   </data>
   <data name="tB_fourthDataName.Size" type="System.Drawing.Size, System.Drawing">
     <value>121, 20</value>
@@ -1115,6 +1106,9 @@
   </data>
   <data name="lbl9.Size" type="System.Drawing.Size, System.Drawing">
     <value>59, 13</value>
+  </data>
+  <data name="&gt;&gt;btn_clr9.Name" xml:space="preserve">
+    <value>btn_clr9</value>
   </data>
   <data name="&gt;&gt;lbl2.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -1141,16 +1135,19 @@
     <value>10, 0</value>
   </data>
   <data name="&gt;&gt;cB_sixthG1.ZOrder" xml:space="preserve">
-    <value>23</value>
+    <value>17</value>
   </data>
   <data name="cB_fifthG2.Size" type="System.Drawing.Size, System.Drawing">
     <value>121, 21</value>
   </data>
-  <data name="tB_sixthDataName.Location" type="System.Drawing.Point, System.Drawing">
-    <value>121, 227</value>
+  <data name="&gt;&gt;cB_dataCount.Name" xml:space="preserve">
+    <value>cB_dataCount</value>
   </data>
   <data name="cB_eighthG1.Size" type="System.Drawing.Size, System.Drawing">
     <value>121, 21</value>
+  </data>
+  <data name="tB_sixthDataName.Location" type="System.Drawing.Point, System.Drawing">
+    <value>121, 227</value>
   </data>
   <data name="&gt;&gt;btn_clr2.Parent" xml:space="preserve">
     <value>$this</value>
@@ -1177,7 +1174,7 @@
     <value>lbl_baundrate</value>
   </data>
   <data name="&gt;&gt;tB_fifthDataName.ZOrder" xml:space="preserve">
-    <value>45</value>
+    <value>34</value>
   </data>
   <data name="&gt;&gt;lbl_chart1.Parent" xml:space="preserve">
     <value>$this</value>
@@ -1189,7 +1186,7 @@
     <value>cB_thirdG2</value>
   </data>
   <data name="&gt;&gt;cB_splitChar.ZOrder" xml:space="preserve">
-    <value>60</value>
+    <value>48</value>
   </data>
   <data name="&gt;&gt;cB_fifthG2.Parent" xml:space="preserve">
     <value>$this</value>
@@ -1242,8 +1239,8 @@
   <data name="cB_eighthG1.TabIndex" type="System.Int32, mscorlib">
     <value>8</value>
   </data>
-  <data name="lbl_chart1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>287, 81</value>
+  <data name="cB_sixthG2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>121, 21</value>
   </data>
   <data name="&gt;&gt;lbl8.Name" xml:space="preserve">
     <value>lbl8</value>
@@ -1260,8 +1257,8 @@
   <data name="tB_tenthDataName.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
   </data>
-  <data name="&gt;&gt;lbl5.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="btn_clr10.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
   </data>
   <data name="&gt;&gt;cB_seventhG1.Type" xml:space="preserve">
     <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -1269,8 +1266,8 @@
   <data name="checkbox_chart2.TabIndex" type="System.Int32, mscorlib">
     <value>10</value>
   </data>
-  <data name="&gt;&gt;btn_clr2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;cB_thirdG1.ZOrder" xml:space="preserve">
+    <value>20</value>
   </data>
   <data name="cB_ninthG2.Location" type="System.Drawing.Point, System.Drawing">
     <value>375, 305</value>
@@ -1287,20 +1284,20 @@
   <data name="tB_ninthDataName.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
   </data>
-  <data name="&gt;&gt;btn_clr9.Name" xml:space="preserve">
-    <value>btn_clr9</value>
+  <data name="&gt;&gt;lbl6.Name" xml:space="preserve">
+    <value>lbl6</value>
   </data>
-  <data name="&gt;&gt;lbl4.ZOrder" xml:space="preserve">
-    <value>48</value>
+  <data name="&gt;&gt;cB_thirdG2.ZOrder" xml:space="preserve">
+    <value>28</value>
   </data>
   <data name="lbl3.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
   </data>
   <data name="&gt;&gt;lbl1.ZOrder" xml:space="preserve">
-    <value>56</value>
+    <value>44</value>
   </data>
   <data name="&gt;&gt;tB_thirdDataName.ZOrder" xml:space="preserve">
-    <value>49</value>
+    <value>38</value>
   </data>
   <data name="tB_tenthDataName.Visible" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -1315,7 +1312,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;lbl_com.ZOrder" xml:space="preserve">
-    <value>57</value>
+    <value>45</value>
   </data>
   <data name="btn_clr1.TabIndex" type="System.Int32, mscorlib">
     <value>11</value>
@@ -1350,8 +1347,8 @@
   <data name="cB_dataCount.Items4" xml:space="preserve">
     <value>5</value>
   </data>
-  <data name="btn_clr3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>15, 15</value>
+  <data name="lbl_chart1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>287, 81</value>
   </data>
   <data name="&gt;&gt;btn_clr9.Parent" xml:space="preserve">
     <value>$this</value>
@@ -1364,6 +1361,9 @@
   </data>
   <data name="lbl4.Text" xml:space="preserve">
     <value>4. Bilgi İsmi</value>
+  </data>
+  <data name="lbl6.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
   </data>
   <data name="&gt;&gt;cB_sixthG1.Name" xml:space="preserve">
     <value>cB_sixthG1</value>
@@ -1380,14 +1380,14 @@
   <data name="&gt;&gt;btn_clr4.ZOrder" xml:space="preserve">
     <value>8</value>
   </data>
-  <data name="lbl2.Text" xml:space="preserve">
-    <value>2. Bilgi İsmi</value>
+  <data name="btn_clr7.Location" type="System.Drawing.Point, System.Drawing">
+    <value>35, 255</value>
   </data>
   <data name="&gt;&gt;cB_splitChar.Type" xml:space="preserve">
     <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;btn_connect.ZOrder" xml:space="preserve">
-    <value>13</value>
+    <value>12</value>
   </data>
   <data name="&gt;&gt;cB_sixthG1.Parent" xml:space="preserve">
     <value>$this</value>
@@ -1398,11 +1398,11 @@
   <data name="&gt;&gt;tB_ninthDataName.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="tB_secondDataName.Size" type="System.Drawing.Size, System.Drawing">
-    <value>121, 20</value>
+  <data name="cB_tenthG1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>121, 21</value>
   </data>
-  <data name="&gt;&gt;label1.ZOrder" xml:space="preserve">
-    <value>59</value>
+  <data name="cB_sixthG1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>121, 21</value>
   </data>
   <data name="label2.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1411,13 +1411,13 @@
     <value>8</value>
   </data>
   <data name="&gt;&gt;cB_firstG1.ZOrder" xml:space="preserve">
-    <value>33</value>
+    <value>22</value>
   </data>
   <data name="label3.TabIndex" type="System.Int32, mscorlib">
     <value>12</value>
   </data>
-  <data name="btn_clr2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>15, 15</value>
+  <data name="label1.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
   </data>
   <data name="lbl10.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1434,11 +1434,14 @@
   <data name="&gt;&gt;tB_eighthDataName.Type" xml:space="preserve">
     <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="&gt;&gt;btn_clr4.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="&gt;&gt;lbl9.Name" xml:space="preserve">
     <value>lbl9</value>
   </data>
-  <data name="lbl8.Text" xml:space="preserve">
-    <value>8. Bilgi İsmi</value>
+  <data name="&gt;&gt;cB_ninthG2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="tB_ninthDataName.Location" type="System.Drawing.Point, System.Drawing">
     <value>121, 305</value>
@@ -1461,14 +1464,11 @@
   <data name="&gt;&gt;lbl_com.Name" xml:space="preserve">
     <value>lbl_com</value>
   </data>
-  <data name="btn_clr7.Size" type="System.Drawing.Size, System.Drawing">
-    <value>15, 15</value>
-  </data>
-  <data name="&gt;&gt;cB_thirdG2.ZOrder" xml:space="preserve">
-    <value>28</value>
+  <data name="cB_splitChar.Items6" xml:space="preserve">
+    <value>|</value>
   </data>
   <data name="&gt;&gt;tB_firstDataName.ZOrder" xml:space="preserve">
-    <value>53</value>
+    <value>42</value>
   </data>
   <data name="&gt;&gt;cB_thirdG1.Parent" xml:space="preserve">
     <value>$this</value>
@@ -1497,14 +1497,17 @@
   <data name="btn_connect.Text" xml:space="preserve">
     <value>İletişimi Başlat</value>
   </data>
-  <data name="&gt;&gt;lbl6.Name" xml:space="preserve">
-    <value>lbl6</value>
+  <data name="&gt;&gt;cB_thirdG2.Parent" xml:space="preserve">
+    <value>$this</value>
   </data>
-  <data name="&gt;&gt;cB_fourthG1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="cB_splitChar.Items16" xml:space="preserve">
+    <value>\\</value>
   </data>
   <data name="lbl_com.Size" type="System.Drawing.Size, System.Drawing">
     <value>37, 13</value>
+  </data>
+  <data name="lbl8.Size" type="System.Drawing.Size, System.Drawing">
+    <value>59, 13</value>
   </data>
   <data name="cB_dataCount.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -1516,7 +1519,7 @@
     <value>56, 230</value>
   </data>
   <data name="&gt;&gt;tB_eighthDataName.ZOrder" xml:space="preserve">
-    <value>39</value>
+    <value>28</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
     <value>510, 401</value>
@@ -1551,8 +1554,8 @@
   <data name="&gt;&gt;tB_fifthDataName.Name" xml:space="preserve">
     <value>tB_fifthDataName</value>
   </data>
-  <data name="cB_splitChar.Items6" xml:space="preserve">
-    <value>|</value>
+  <data name="&gt;&gt;tB_fifthDataName.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="cB_dataCount.Items9" xml:space="preserve">
     <value>10</value>
@@ -1586,9 +1589,6 @@
   </data>
   <data name="tB_ninthDataName.Size" type="System.Drawing.Size, System.Drawing">
     <value>121, 20</value>
-  </data>
-  <data name="&gt;&gt;cB_ninthG2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;label3.Name" xml:space="preserve">
     <value>label3</value>
@@ -1644,20 +1644,20 @@
   <data name="&gt;&gt;lbl_chart1.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="lbl8.Size" type="System.Drawing.Size, System.Drawing">
-    <value>59, 13</value>
+  <data name="&gt;&gt;lbl1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="cB_splitChar.Items15" xml:space="preserve">
     <value>//</value>
   </data>
-  <data name="lbl_baundrate.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
+  <data name="&gt;&gt;cB_fourthG1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;lbl6.ZOrder" xml:space="preserve">
-    <value>44</value>
+    <value>33</value>
   </data>
   <data name="&gt;&gt;cB_fourthG1.ZOrder" xml:space="preserve">
-    <value>27</value>
+    <value>19</value>
   </data>
   <data name="&gt;&gt;cB_fifthG1.Name" xml:space="preserve">
     <value>cB_fifthG1</value>
@@ -1668,7 +1668,7 @@
   <data name="cB_splitChar.Items2" xml:space="preserve">
     <value>-</value>
   </data>
-  <data name="&gt;&gt;btn_clr4.Type" xml:space="preserve">
+  <data name="&gt;&gt;btn_clr2.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="cB_fifthG1.Size" type="System.Drawing.Size, System.Drawing">
@@ -1696,7 +1696,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;cB_seventhG1.ZOrder" xml:space="preserve">
-    <value>21</value>
+    <value>16</value>
   </data>
   <data name="&gt;&gt;lbl1.Parent" xml:space="preserve">
     <value>$this</value>
@@ -1717,7 +1717,7 @@
     <value>4</value>
   </data>
   <data name="&gt;&gt;tB_fourthDataName.ZOrder" xml:space="preserve">
-    <value>47</value>
+    <value>36</value>
   </data>
   <data name="cB_splitChar.Items12" xml:space="preserve">
     <value>**</value>
@@ -1734,8 +1734,8 @@
   <data name="&gt;&gt;btn_clr1.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;cB_eighthG2.Name" xml:space="preserve">
-    <value>cB_eighthG2</value>
+  <data name="tB_thirdDataName.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
   </data>
   <data name="lbl10.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
